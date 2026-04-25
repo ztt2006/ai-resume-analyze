@@ -1,0 +1,24 @@
+# 核心 Web 框架
+fastapi
+uvicorn[standard]
+
+# PDF 解析（最稳定）
+pdfplumber
+
+# PostgreSQL 数据库
+sqlalchemy>=2.0
+psycopg2-binary
+
+# Redis 缓存
+redis
+
+# AI 大模型调用
+requests
+python-dotenv
+
+# 文件上传、数据校验
+python-multipart
+pydantic>=2.0
+
+# 文本处理
+pandas
