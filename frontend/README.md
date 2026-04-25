@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# 前端说明
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 技术栈
+- React 19
+- Vite
+- shadcn/ui
+- Tailwind CSS
+- Axios
 
-Currently, two official plugins are available:
+## 页面能力
+- 首页 / 工作台
+  - 简历上传
+  - JD 输入与匹配
+  - JD 模板管理
+  - 招聘流程概览
+  - Top 候选人榜单
+  - 待处理动作
+- 历史记录页
+  - 关键词筛选
+  - 阶段筛选
+  - 优先级筛选
+  - 简历历史 / 匹配历史
+- 批量对比页
+  - 多候选人选择
+  - JD 模板快速使用
+  - 排名结果摘要
+- 简历详情页
+  - 结构化信息
+  - 原文 / 清洗文本切换
+  - 招聘管理信息编辑
+  - 近期匹配记录
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 本地运行
+1. 复制 `.env.example` 为 `.env`
+2. 安装依赖：`npm install`
+3. 启动开发环境：`npm run dev`
+4. 打包：`npm run build`
 
-## React Compiler
+## 环境变量
+- `VITE_API_BASE_URL=http://127.0.0.1:8000/api`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 说明
+- 页面采用后台管理系统布局：左侧侧边栏，右侧内容区
+- 保持与后端统一 REST 风格
+- 使用统一请求封装和错误拦截
